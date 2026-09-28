@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/employees">Employees</a>
+    <a href="/department">Department</a>
+</nav>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

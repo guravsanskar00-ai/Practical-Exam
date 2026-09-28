@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Employee List</h1>
+
+{% for emp in employees %}
+
+<h3>{{ emp.name }}</h3>
+<p>Department: {{ emp.department }}</p>
+<p>Experience: {{ emp.experience }} years</p>
+
+{% if emp.experience == 0 %}
+<p>Status: Fresher</p>
+{% elif emp.experience < 5 %}
+<p>Status: Experienced</p>
+{% else %}
+<p>Status: Senior</p>
+{% endif %}
+
+<hr>
+
+{% endfor %}
+
+{% endblock %}
