@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Product List</h1>
+
+{% for product in products %}
+
+<h3>{{ product.name }}</h3>
+<p>Price: ₹{{ product.price }}</p>
+
+{% if product.available %}
+    <p>Available</p>
+{% else %}
+    <p>Out of Stock</p>
+{% endif %}
+
+<hr>
+
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Information</title>
+</head>
+<body>
+
+<h1>Employee Information Form</h1>
+
+<form method="POST">
+
+    Employee ID:
+    <input type="text" name="emp_id"><br><br>
+
+    Name:
+    <input type="text" name="name"><br><br>
+
+    Department:
+    <input type="text" name="department"><br><br>
+
+    Designation:
+    <input type="text" name="designation"><br><br>
+
+    <input type="submit" value="Submit">
+
+</form>
+
+{% if data %}
+
+<h2>Submitted Information</h2>
+
+<p>Employee ID: {{ data.emp_id }}</p>
+<p>Name: {{ data.name }}</p>
+<p>Department: {{ data.department }}</p>
+<p>Designation: {{ data.designation }}</p>
+
+{% endif %}
+
+</body>
+</html>

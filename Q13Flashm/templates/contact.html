@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Form</title>
+</head>
+<body>
+
+<h1>Contact Us</h1>
+
+{% with messages = get_flashed_messages() %}
+    {% for message in messages %}
+        <p>{{ message }}</p>
+    {% endfor %}
+{% endwith %}
+
+<form method="POST">
+
+    Name:
+    <input type="text" name="name"><br><br>
+
+    Email:
+    <input type="email" name="email"><br><br>
+
+    Subject:
+    <input type="text" name="subject"><br><br>
+
+    Message:
+    <textarea name="message"></textarea><br><br>
+
+    <input type="submit" value="Submit">
+
+</form>
+
+</body>
+</html>

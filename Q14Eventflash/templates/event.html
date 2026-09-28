@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Registration</title>
+</head>
+<body>
+
+<h1>Event Registration</h1>
+
+{% with messages = get_flashed_messages() %}
+    {% for message in messages %}
+        <p>{{ message }}</p>
+    {% endfor %}
+{% endwith %}
+
+<form method="POST">
+
+    Participant Name:
+    <input type="text" name="name"><br><br>
+
+    Mobile Number:
+    <input type="text" name="mobile"><br><br>
+
+    Event Name:
+
+    <select name="event">
+        <option value="">Select Event</option>
+        <option value="Coding Competition">Coding Competition</option>
+        <option value="Quiz Competition">Quiz Competition</option>
+        <option value="Web Development">Web Development</option>
+    </select>
+
+    <br><br>
+
+    <input type="submit" value="Register">
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Student Result</h1>
+
+<p>Name: {{ name }}</p>
+<p>Percentage: {{ percentage }}%</p>
+
+{% if percentage >= 75 %}
+    <h3>Distinction</h3>
+{% elif percentage >= 60 %}
+    <h3>First Class</h3>
+{% elif percentage >= 50 %}
+    <h3>Second Class</h3>
+{% elif percentage >= 40 %}
+    <h3>Pass</h3>
+{% else %}
+    <h3>Fail</h3>
+{% endif %}
+
+{% endblock %}
