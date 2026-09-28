@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Attendance</title>
+</head>
+<body>
+
+<h1>Student Attendance</h1>
+
+{% with messages = get_flashed_messages() %}
+    {% for message in messages %}
+        <p>{{ message }}</p>
+    {% endfor %}
+{% endwith %}
+
+<form method="POST">
+
+    Student Name:
+    <input type="text" name="name"><br><br>
+
+    Total Working Days:
+    <input type="number" name="total_days"><br><br>
+
+    Days Present:
+    <input type="number" name="present_days"><br><br>
+
+    <input type="submit" value="Calculate">
+
+</form>
+
+{% if percentage is not none %}
+    <h3>Attendance: {{ percentage }}%</h3>
+{% endif %}
+
+</body>
+</html>

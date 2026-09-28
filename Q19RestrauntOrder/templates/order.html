@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Restaurant Order</title>
+</head>
+<body>
+
+<h1>Restaurant Order</h1>
+
+{% with messages = get_flashed_messages() %}
+    {% for message in messages %}
+        <p>{{ message }}</p>
+    {% endfor %}
+{% endwith %}
+
+<form method="POST">
+
+    Customer Name:
+    <input type="text" name="name"><br><br>
+
+    Food Item:
+    <input type="text" name="food"><br><br>
+
+    Quantity:
+    <input type="number" name="quantity"><br><br>
+
+    Price:
+    <input type="number" step="any" name="price"><br><br>
+
+    <input type="submit" value="Generate Bill">
+
+</form>
+
+{% if total is not none %}
+
+<h2>Restaurant Bill</h2>
+
+<p>Customer: {{ name }}</p>
+<p>Food: {{ food }}</p>
+<p>Quantity: {{ quantity }}</p>
+<p>Price: ₹{{ price }}</p>
+
+<p>Subtotal: ₹{{ subtotal }}</p>
+<p>Service Charge (5%): ₹{{ service_charge }}</p>
+<p>GST (18%): ₹{{ gst }}</p>
+
+<h2>Final Bill: ₹{{ total }}</h2>
+
+{% endif %}
+
+</body>
+</html>

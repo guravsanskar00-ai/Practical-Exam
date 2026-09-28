@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Age Calculator</title>
+</head>
+<body>
+
+<h1>Age Calculator</h1>
+
+{% with messages = get_flashed_messages() %}
+    {% for message in messages %}
+        <p>{{ message }}</p>
+    {% endfor %}
+{% endwith %}
+
+<form method="POST">
+
+    Name:
+    <input type="text" name="name"><br><br>
+
+    Date of Birth:
+    <input type="date" name="dob"><br><br>
+
+    <input type="submit" value="Calculate Age">
+
+</form>
+
+{% if age is not none %}
+    <h2>{{ name }} is {{ age }} years old.</h2>
+{% endif %}
+
+</body>
+</html>
